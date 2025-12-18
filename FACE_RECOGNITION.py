@@ -17,7 +17,7 @@ import os
 ENCODING_FILE = 'encodings.pickle'
 TOLERANCE = 0.45
 MODEL = 'hog'
-SERIAL_PORT = 'COM3'
+SERIAL_PORT = os.getenv("ARDUINO_PORT", "COM3")
 BAUD_RATE = 9600
 SEND_DELAY = 10
 LANDMARK_MODEL = 'shape_predictor_68_face_landmarks.dat'
@@ -30,9 +30,9 @@ FRAME_DIFF_THRESHOLD = 5
 LEFT_EYE = list(range(36, 42))
 RIGHT_EYE = list(range(42, 48))
 
-RECIPIENT_EMAIL = "xxxxxx@xxxx.com"
-SENDER_EMAIL = "xxxxxx@xxxx.com"
-SENDER_PASS = "xxxxxx"
+RECIPIENT_EMAIL = os.getenv("RECIPIENT_EMAIL")
+SENDER_EMAIL = os.getenv("SENDER_EMAIL")
+SENDER_PASS = os.getenv("SENDER_PASS")
 
 def eye_aspect_ratio(eye):
     A = dist.euclidean(eye[1], eye[5])
@@ -211,7 +211,7 @@ while True:
                 else:
                     elapsed = current_time - unknown_start_time
                     if elapsed >= 2:
-                        img_filename = f"unknown_{int(current_time)}.jpg"
+                        img_filename = f"temp/unknown_{int(current_time)}.jpg"
                         cv2.imwrite(img_filename, unknown_img)
                         send_mail_with_img(img_filename)
                         unknown_detected = False  
@@ -340,4 +340,5 @@ video.release()
 cv2.destroyAllWindows()
 if ser is not None:
     ser.close()
+
 print("✅ System stopped")
