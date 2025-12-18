@@ -50,19 +50,24 @@ Install Python packages:
    
 This creates `encodings.pickle` with face encodings for all people in `known_faces/`.
 
-4. **Configure email**
+4. **Configure Email**
 
-Open `FACE_RECOGNITION.py` and set:
+Email credentials are not hardcoded in the source code for security reasons.
+Set the following environment variables before running the project:
 
 - `SENDER_EMAIL` – the email address used to send alerts  
 - `RECIPIENT_EMAIL` – the email address that receives alerts  
-- `SENDER_PASS` – app password for the sender email (for Gmail, use an [App Password](https://support.google.com/accounts/answer/185833))
+- `SENDER_PASS` – app password for the sender email (for Gmail, use an App Password)
+
+If these variables are not set, email alerts are automatically disabled and
+the system continues to operate normally.
+
 
 5. **Connect Arduino**
 
 - Open `ARDUINO_CODE/ARDUINO_CODE.ino` in the Arduino IDE and upload it to the Arduino board.  
 - Make sure the serial baud rate in the Arduino sketch matches `BAUD_RATE` in `FACE_RECOGNITION.py`.  
-- Set the correct `SERIAL_PORT` in `FACE_RECOGNITION.py` (for example, `COM3` on Windows).  
+- Set ARDUINO_PORT if required (e.g. /dev/ttyUSB0 on Linux).
 
 ## Run the System
 
