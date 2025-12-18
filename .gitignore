@@ -12,6 +12,8 @@ encodings.pickle
 shape_predictor_68_face_landmarks.dat
 *.dat
 
+temp/
+
 known_faces/*
 !known_faces/README.md
 
