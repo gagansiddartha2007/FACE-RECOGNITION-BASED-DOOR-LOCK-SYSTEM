@@ -1,15 +1,25 @@
-Known Faces Directory
+## Known Faces Directory
 
-Instructions:
+This directory stores images of **authorized persons** used for face recognition.
 
-This folder contains subdirectories for each authorized person. The main script train_faces.py will automatically scan all subfolders here and create face encodings.
+The script `train_faces.py` automatically scans all subfolders inside this directory and generates face encodings for each person.
 
-How to add authorized users:
-   1. Create a folder for each person.
-   2. Add photos of each person:
+---
 
-        Put 3-10 clear, front-facing photos of the person in their folder
-      
-        Good lighting, no glasses/sunglasses, minimal background
+### How to Add Authorized Users
 
-        JPG or PNG format works best
+1. **Create a folder for each person**
+   - Folder name should be the person’s name (used as their label)
+
+2. **Add photos of the person**
+   - Place **3–10 clear, front-facing photos** inside their folder
+   - Use:
+     - Good lighting
+     - No glasses or sunglasses
+     - Minimal background
+   - Supported formats:
+     - `.jpg`
+     - `.png`
+
+---
+
