@@ -37,7 +37,7 @@ Install Python packages:
 ## Setup
 
 1. **Download landmark model**  
-   Download `shape_predictor_68_face_landmarks.dat` from the [dlib model download page](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2) and place it in the project folder (same level as `FACE_RECOGNITION.py`).
+   Download `shape_predictor_68_face_landmarks.dat` from the [dlib model download page](https://dlib.net/files/) and place it in the project folder (same level as `FACE_RECOGNITION.py`).
 
 2. **Add known faces**  
    - Inside `known_faces`, create a folder for each person (for example, `Person1`, `Person2`).  
